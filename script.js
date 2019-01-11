@@ -258,11 +258,11 @@ function onInput(obj, callback) {
     });
 }
 
-function onClick(obj, callback) {
-    obj.addEventListener('click', function(e) {
-        callback(e);
-    });
-}
+// function onClick(obj, callback) {
+//     obj.addEventListener('click', function(e) {
+//         callback(e);
+//     });
+// }
 
 onInput($usd, usdToBrl);
 onInput($brl, brlToUsd);
@@ -270,30 +270,30 @@ onInput($iof, usdToBrl);
 onInput($spread, usdToBrl);
 onInput($ptax, usdToBrl);
 
-onClick($showSteps, function(e) {
-    e.preventDefault();
+// onClick($showSteps, function(e) {
+//     e.preventDefault();
 
-    if ($usd.disabled) {
-        return;
-    }
+//     if ($usd.disabled) {
+//         return;
+//     }
 
-    if ($stepToStep.childElementCount) {
-        $stepToStep.innerHTML = '';
-        $stepToStep.style.display = 'none';
-    }
-    else {
-        if (window.Big) {
-            stepToStepUsdToBrl();
-            $stepToStep.style.display = 'block';
-        }
-        else {
-            include('big.min.js', function() {
-                stepToStepUsdToBrl();
-                $stepToStep.style.display = 'block';
-            });
-        }
-    }
-});
+//     if ($stepToStep.childElementCount) {
+//         $stepToStep.innerHTML = '';
+//         $stepToStep.style.display = 'none';
+//     }
+//     else {
+//         if (window.Big) {
+//             stepToStepUsdToBrl();
+//             $stepToStep.style.display = 'block';
+//         }
+//         else {
+//             include('big.min.js', function() {
+//                 stepToStepUsdToBrl();
+//                 $stepToStep.style.display = 'block';
+//             });
+//         }
+//     }
+// });
 
 // Se a tela for pequena, já adiciona uma barra de rolagem, para que ao
 // clicar em "mostrar passo a passo" não faça o layout andar
