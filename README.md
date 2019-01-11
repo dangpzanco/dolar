@@ -1,31 +1,29 @@
-# Dólar do Nubank
+# Dólar 
 
-![Valor Nubank](valor-nubank.png)
-
-O objetivo do site [dolarnubank.github.io](https://dolarnubank.github.io)
-é calcular o valor aproximado que vai aparecer na fatura quando for feita
-uma compra internacional usando o cartão de crédito do Nubank.
+O objetivo do site
+é calcular o valor aproximado do dólar quando for feita
+uma compra internacional usando o cartão de crédito.
 
 A seguir temos duas fórmulas. A primeira, que é justamente usada nesse site,
 mostra como calcular o valor na fatura considerando o valor da compra em dólares
 e a cotação atual do dólar PTAX que aparece no site do Banco Central.
 
-O Nubank afirma que o spread é de 4%, no entanto essa porcentagem varia
+O spread é de 4%, mas pode ser diferente de acordo com seu banco, no entanto essa porcentagem varia
 todo dia, segundo um critério desconhecido, chegando a 4,3% ou mais. A segunda
 fórmula permite calcular o valor exato do spread considerando o valor que
 aparece na fatura, a cotação do dólar PTAX e o valor da compra em dólares.
 
 ---
 
-## Cálculo do dólar do Nubank
+## Cálculo do dólar
 
     Seja:
         C: o valor da compra em dólares
         P: o valor do dólar PTAX para venda (ver em www.bcb.gov.br)
         V: o valor final na fatura incluindo o IOF
-        S: o spread (4% segundo o Nubank)
+        S: o spread (4%)
 
-Assim se calcula o valor final na fatura:
+Assim se calcula o valor final:
 
     V = 1,0638 * 1,04 * C * P
     V = 1,106352 * C * P
@@ -34,13 +32,13 @@ Assim se calcula o valor final na fatura:
 Exemplo:
 
 Foi feita uma compra de US$ 25,00, com dólar PTAX a 3,7566.
-Considere o spread de 4,3%. Qual é o valor final na fatura do Nubank?
+Considere o spread de 4,3%. Qual é o valor final?
 
     V = 1,0638 * 1,043 * C * P
     V = 1,0638 * 1,043 * 25 * 3,7566
     V = 104,202768411
 
-O valor na fatura do Nubank é de R$ 104,20
+O valor é de R$ 104,20
 
 
 ---
@@ -80,8 +78,7 @@ subtraímos 1 da fórmula:
 
 Exemplo:
 
-Foi feita uma compra de US$ 25,00, com dólar PTAX a 3,7566. Na fatura do Nubank
-aparece o valor final de R$ 104,27. Qual é a porcentagem do spread do Nubank?
+Foi feita uma compra de US$ 25,00, com dólar PTAX a 3,7566. O valor final de R$ 104,27. Qual é a porcentagem do spread?
 
 
     S = (V / (1,0638 * C * P)) - 1
